@@ -5,19 +5,40 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "express": "vue-cli-service express:watch",
+    "express:run": "vue-cli-service express:run",
+    "test": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "axios": "^0.19.0",
+    "babel-jest": "^24.9.0",
     "core-js": "^2.6.5",
-    "vue": "^2.6.10"
+    "express": "^4.17.1",
+    "express-http-proxy": "^1.5.1",
+    "jest": "^24.9.0",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.0",
+    "vue": "^2.6.10",
+    "vue-jest": "^3.0.4",
+    "vue-lazyload": "^1.3.2",
+    "vue-lazyload-video": "^0.1.15",
+    "vue-router": "^3.1.3"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
+    "@vue/cli-plugin-unit-jest": "^3.11.0",
     "@vue/cli-service": "^3.11.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^23.6.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "vue-cli-plugin-express": "^1.0.2",
+    "vue-masonry-css": "^1.0.3",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
@@ -32,7 +53,17 @@
     "rules": {},
     "parserOptions": {
       "parser": "babel-eslint"
-    }
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/__tests__/*.{j,t}s?(x)"
+        ],
+        "env": {
+          "jest": true
+        }
+      }
+    ]
   },
   "postcss": {
     "plugins": {
